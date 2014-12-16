@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple chat</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
@@ -15,10 +16,16 @@
             <span class="message__text">{{message.text}}</span>
         </p>
     </div>
-    <form id="newMessage" no-validate>
-        <input type="text" name="author" ng-model="newMessage.author">
-        <textarea name="text" id="text" ng-model="newMessage.text"></textarea>
-        <input type="submit" value="Send" ng-click="sendMessage($event)">
+    <form class="form" id="newMessage" no-validate>
+        <div class="form-group">
+            <input class="form-control" type="text" name="author" ng-model="newMessage.author" placeholder="author">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="text" id="text" ng-model="newMessage.text" placeholder="text"></textarea>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-default" type="submit" value="Send" ng-click="sendMessage($event)">
+        </div>
     </form>
 </body>
 </html>
